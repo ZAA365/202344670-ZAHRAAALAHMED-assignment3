@@ -526,9 +526,9 @@ body.dark-mode .btn-secondary { color: #86868b; border-color: #444; }
     #greeting-message {
     opacity: 0;
     transition: opacity 0.5s ease;
-}
+    }
 
     #greeting-message.show {
-        opacity: 1;
+    opacity: 1;
     }
 }
