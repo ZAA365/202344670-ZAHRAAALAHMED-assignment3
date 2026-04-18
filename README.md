@@ -1,51 +1,74 @@
 # 202344670-ZAHRAAALAHMED-assignment3
-# 202344670-ZAHRAAALAHMED-assignment2
-# Assignment 2 – Interactive Features
+# Assignment 3 – Advanced Functionality
 
 ## Project Description
-This is an improved version of my personal portfolio website developed for Assignment 2.
-The goal of this version is to make the website more **interactive, dynamic, and user-friendly** compared to Assignment 1.
+This is the third version of my personal portfolio website, building on the interactive features from Assignment 2.
+The goal of this version is to add **advanced functionality, external integrations, and complex logic** to make the web application more powerful and professional.
 
-The website showcases my background, projects, and contact information, while adding new interactive features such as a **personalized greeting system**, **user input handling**, and **data storage using localStorage**.
+In addition to the previous features (greeting system, dark mode, and localStorage), this version introduces **GitHub API integration**, **project filtering and sorting**, **enhanced form validation**, **state management**, and **performance optimizations**.
 
 ---
 
 ## Features
 
-### Dynamic Greeting Feature
+### API Integration (NEW)
+- Connects to the GitHub Public API to fetch real-time repository data
+- Users can enter any GitHub username to view their public repositories
+- Displays repo name, description, language, and star count in elegant cards
+- Includes proper error handling (user not found, API rate limits, network errors)
+- Shows a loading spinner while fetching data
+
+### Complex Logic (NEW)
+- **Project Filtering:** Filter projects by category ("All", "Design", "Development")
+- **Project Sorting:** Sort projects alphabetically (A–Z or Z–A)
+- **Enhanced Contact Form Validation:** Multi-rule validation for name (letters only, min 2 chars), email (format check), and message (min 10 chars)
+- Real-time error feedback when user leaves a field or tries to submit
+
+### State Management (NEW)
+- **Simulated Login/Logout:** Users can "log in" with a username; status is saved and remembered across page refreshes
+- **Visit Timer:** Counts how long a visitor has been on the site (survives page refresh using sessionStorage)
+- Previous state features (dark mode and greeting name) are still saved using localStorage
+
+### Dynamic Greeting Feature (From Assgn 2)
 - Users can enter their name and receive a personalized greeting
 - Greeting changes based on time of day (morning/afternoon/evening)
 - Displays instantly without reloading the page
 
-### Data Handling (localStorage)
-- Saves user name and displays it again on return
-- Saves dark/light mode preference
+### Data Handling (localStorage & sessionStorage)
+- Saves user greeting name and theme preference (localStorage)
+- Saves login status (localStorage)
+- Saves visit timer seconds (sessionStorage)
 
-### Dark/Light Mode Toggle
+### Dark/Light Mode Toggle (From Assgn 2)
 - Users can switch between themes
 - Theme preference is saved automatically
+- All new features (API cards, filters, auth panel) fully support dark mode
 
-### User Feedback
-- Error message shown if input field is empty
-- Greeting message shown when input is valid
-- Returning users see a welcome-back message
+### Performance Optimizations (NEW)
+- Images use `loading="lazy"` for faster initial page load
+- Removed inline styles from HTML (moved to external CSS for better caching)
+- Clean, non-repetitive CSS code
 
 ### Animations & Transitions
 - Smooth transitions for theme switching
-- Hover effects on buttons and navigation
+- Hover effects on buttons, navigation, and project rows
 - Fade-in effect for greeting message
+- Slide-down animation for the login panel
 
 ### Responsive Design
-- Works on desktop, tablet, and mobile devices
+- Works seamlessly on desktop, tablet, and mobile devices
 
 ---
 
 ## Setup Instructions (How to Run Locally)
-
 1. **Download or clone the repository**
+```bash
+git clone https://github.com/YOUR_USERNAME/202344670-ZAHRAAALAHMED-assignment3.git
+```
+
 2. **Ensure folder structure is correct:**
 ```
-assignment-2/
+202344670-ZAHRAAALAHMED-assignment3/
 ├── index.html
 ├── css/
 │   └── styles.css
@@ -53,25 +76,42 @@ assignment-2/
 │   └── script.js
 ├── assets/
 │   └── images/
-└── docs/
+│       ├── project1.png
+│       └── project2.png
+├── docs/
+│   ├── ai-usage-report.md
+│   └── technical-documentation.md
+├── README.md
+└── .gitignore
 ```
-3. **Open the website**
-- Double-click `index.html` OR open it in any browser
 
-4. **Test features**
+3. **Open the website**
+- Double-click `index.html` OR open it in any modern browser (Chrome recommended)
+
+4. **Test the new Assignment 3 features**
+- **API:** Enter a GitHub username (e.g., "octocat") in the GitHub section and click "Fetch Repos"
+- **Filtering:** Click "Design" or "Development" to filter the projects table
+- **Sorting:** Use the dropdown to sort projects by name
+- **Form Validation:** Try submitting the contact form with empty fields or invalid email
+- **Login/Logout:** Click "Login" in the nav, enter a name, and refresh the page
+- **Timer:** Watch the timer bar below the navigation count your visit time
+
+5. **Test previous Assignment 2 features**
 - Enter your name in the greeting section
 - Click "Greet Me"
 - Toggle dark mode 🌙
-- Refresh page to check saved data
+- Refresh page to check saved data (name, theme, and login status)
 
 ---
 
 ## AI Usage Summary
 AI tools were used to assist in:
-- Designing and implementing the greeting feature
-- Debugging JavaScript logic
-- Understanding localStorage and event handling
-- Improving user interaction and feedback
+- Implementing the GitHub API integration with `fetch()` and error handling
+- Designing the multi-rule contact form validation logic with regex
+- Understanding how to sort and filter DOM elements dynamically
+- Explaining the difference between `localStorage` and `sessionStorage` for the timer
+- Structuring JavaScript into organized, well-commented sections
+- Performance optimization suggestions (lazy loading, removing inline styles)
 
 Detailed explanation is available in:
 📄 `docs/ai-usage-report.md`
@@ -79,7 +119,7 @@ Detailed explanation is available in:
 ---
 
 ## Technical Documentation
-Detailed explanation of system design, features, and implementation:
+Detailed explanation of system design, API integration, validation rules, and implementation:
 📄 `docs/technical-documentation.md`
 
 ---
@@ -93,9 +133,11 @@ You can deploy the project using:
 ---
 
 ## Notes
-- This project focuses on **interactivity and functionality**, not just design
-- All features were implemented and tested manually
-- AI was used as a learning tool and all code was reviewed and understood
+- This project focuses on **advanced functionality and real-world web application logic**
+- API integration uses the free GitHub Public API (no API key required)
+- Contact form validates on the frontend only (no backend server)
+- All features were implemented, tested manually, and debugged
+- AI was used as a learning tool and all code was reviewed, modified, and fully understood
 
 ---
 
