@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- DOCUMENT SETUP & STYLES -->
+        <!-- Links to external CSS file -->
+        <!-- Internal CSS for paragraphs and sections -->
+        <!-- Character encoding and page title -->
+        <link href="css/styles.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <title>Zahraa AL-Ahmed - Portfolio</title>
+    </head>
+    
+    <body>
+        <!-- PAGE HEADER -->
+        <!-- Contains my name as main banner -->
+        <header>
+        <h1>ZAHRAA AL-AHMED</h1>
+        </header>
+        <!-- NAVIGATION SECTION -->
+        <nav class="navigation">
+            <a href="#AboutMe">About</a>
+            <a href="#Projects">Projects</a>
+            <a href="#ContactMe">Contacts</a>
+        </nav>
+        <!-- DARK MODE BUTTON -->
+        <!-- Button to switch between light and dark themes -->
+        <!-- JavaScript file linked here -->
+        <button id="theme-toggle">🌙 Dark Mode</button>
+        <script src="js/script.js" defer></script>
+        <!-- INTRODUCTION SECTION -->
+        <!-- Personal introduction with welcome messages -->
+        <main>
+        <h1>Zahraa Adel AL-Ahmed</h1>
+        <p>
+            Welcome to my personal portfolio website!
+        </p>
+        <!-- GREETING FEATURE -->
+        <section id="greeting-section">
+            <h2>Welcome 👋</h2>
+            
+            <input type="text" id="username" placeholder="Enter your name">
+            <button id="greet-btn">Greet Me</button>
+            
+            <p id="greeting-message"></p>
+            <p id="error-message" style="color: red;"></p>
+        </section>
+        <p>
+            Here you can find some information about me and my projects.
+        </p>
+        
+        <!-- ABOUT ME SECTION -->
+        <!-- Box containing personal background information -->
+        <!-- Includes my studies, interests, and favorite quote -->
+        <section id="AboutMe">
+            <h2>About Me</h2>
+            <p>
+                I am a Saudi CS junior KFUPM student. I am interested in web development as I currently taking my first web design course.
+                I also like to draw by pencil and read books. My favorite quote is "Learn to Earn". 
+            </p>
+        </section>
+        <!-- PROJECTS SECTION -->
+        <!-- Displays my projects in a table format -->
+        <!-- Each project has title, description, and image -->
+        <section id="Projects">
+            <h2>Projects</h2>
+            <p>
+                Below are some of the projects I have worked on in my CS courses. I am proud of these projects and I hope to continue learning and improving my skills in the future.
+            </p>
+            <table>
+                <!-- TABLE HEADER ROW -->
+                <!-- Defines column titles for the projects table -->
+                <tr>
+                    <th>Project Title</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                </tr>
+                <tr>
+                <!-- FIRST PROJECT ROW -->
+                <!-- KFUPM EVENTS project with green description text -->
+                    <td>KFUPM EVENTS</td>
+                    <td><span style="color: #8100cc">A SWE206 project which is a figma designed prototype of an events management system for KFUPM clubs.</span></td>
+                    <td><img src="assets\images\project1.png" alt="Project 1 Image" width="100"  style="float:right"></td>
+                </tr>
+                <tr>
+                <!-- SECOND PROJECT ROW -->
+                <!-- Disney Movies Recipes project with orange description text -->
+                    <td>Disney Movies Recipes</td>
+                    <td><span style="color: #8100cc"> A high school Computer Science project using NSB AppStudio that involves grouping recipes for Disney movies.</span></td>
+                    <td><img src="assets\images\project2.png" alt="Project 2 Image" width="100"  style="float:right"></td>
+                    
+                </tr>
+            </table>
+        </section>
+        <section id="ContactMe">
+        <!-- CONTACT FORM SECTION -->
+        <!-- Form for visitors to send me messages -->
+        <!-- Includes fields for name, email, and message -->
+            <h2>Contact Me</h2>
+            <p>
+                To contact me, please fill out the form below.
+            </p>
+            <form>
+                <!-- NAME INPUT FIELD -->
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br><br>
+                <!-- EMAIL INPUT FIELD -->
+                <label for="email">Email:</label></br>
+                <input type="email" id="email" name="email"><br><br>
+                <!-- MESSAGE TEXTAREA -->
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message"></textarea><br><br>
+                <!-- SUBMIT BUTTON -->
+                <input type="submit" value="Submit">
+                </form>
+        </section>
+        </main>
+    </body>
+</html>
