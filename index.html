@@ -22,8 +22,24 @@
         <nav class="navigation">
             <a href="#AboutMe">About</a>
             <a href="#Projects">Projects</a>
+            <a href="#GitHub">GitHub</a>
             <a href="#ContactMe">Contacts</a>
+            <button id="auth-btn" class="nav-auth-btn">Login</button>
         </nav>
+        
+        <!-- TIMER BAR -->
+        <div class="timer-bar" id="timer-bar">
+        <span id="timer-display">⏱ 0m 0s</span>
+        </div>
+        <!-- AUTHENTICATION PANEL -->
+        <div class="auth-panel hidden" id="auth-panel">
+        <div class="auth-panel-inner">
+            <label for="auth-username">Username:</label>
+            <input type="text" id="auth-username" placeholder="Enter any username">
+            <button id="auth-submit-btn" class="btn-primary">Sign In</button>
+            <button id="auth-cancel-btn" class="btn-secondary">Cancel</button>
+        </div>
+    </div>
         <!-- DARK MODE BUTTON -->
         <!-- Button to switch between light and dark themes -->
         <!-- JavaScript file linked here -->
@@ -68,6 +84,20 @@
             <p>
                 Below are some of the projects I have worked on in my CS courses. I am proud of these projects and I hope to continue learning and improving my skills in the future.
             </p>
+            <!-- THIS FILTER/SORT BLOCK HERE -->
+            <div class="filter-controls">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                    <button class="filter-btn" data-filter="development">Development</button>
+                </div>
+                <select id="sort-select" class="sort-dropdown">
+                    <option value="default">Default Order</option>
+                    <option value="name-asc">Name (A–Z)</option>
+                    <option value="name-desc">Name (Z–A)</option>
+                </select>
+            </div>
+            <p id="no-projects-msg" class="info-text hidden">No projects match this filter.</p>
             <table>
                 <!-- TABLE HEADER ROW -->
                 <!-- Defines column titles for the projects table -->
@@ -93,6 +123,21 @@
             </tr>
             </table>
         </section>
+        <!-- GITHUB SECTION HERE -->
+        <section id="GitHub">
+            <h2>GitHub Repositories</h2>
+            <p>Enter a GitHub username to explore their public repositories.</p>
+            <div class="github-controls">
+                <input type="text" id="github-username" placeholder="Enter GitHub username">
+                <button id="fetch-repos-btn" class="btn-primary">Fetch Repos</button>
+            </div>
+            <div id="github-loading" class="loading-container hidden">
+                <div class="loading-spinner"></div>
+                <p>Loading repositories...</p>
+            </div>
+            <p id="github-error" class="error-text"></p>
+            <div id="github-results" class="github-results"></div>
+        </section>
         <section id="ContactMe">
         <!-- CONTACT FORM SECTION -->
         <!-- Form for visitors to send me messages -->
@@ -102,18 +147,33 @@
                 To contact me, please fill out the form below.
             </p>
             <form>
+                <form id="contact-form" novalidate>
                 <!-- NAME INPUT FIELD -->
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name"><br><br>
+                <div class="form-group">
+                    <label for="contact-name">Name:</label>
+                    <input type="text" id="contact-name" name="name">
+                    <span class="error-text" id="name-error"></span>
+                </div>
                 <!-- EMAIL INPUT FIELD -->
-                <label for="email">Email:</label></br>
-                <input type="email" id="email" name="email"><br><br>
+                <div class="form-group">
+                    <label for="contact-email">Email:</label>
+                    <input type="email" id="contact-email" name="email">
+                    <span class="error-text" id="email-error"></span>
+                </div>
                 <!-- MESSAGE TEXTAREA -->
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message"></textarea><br><br>
+                <div class="form-group">
+                    <label for="contact-message">Message:</label>
+                    <textarea id="contact-message" name="message"></textarea>
+                    <span class="error-text" id="message-error"></span>
+                </div>
                 <!-- SUBMIT BUTTON -->
-                <input type="submit" value="Submit">
-                </form>
+                <div class="form-actions">
+                    <input type="submit" value="Submit" class="btn-primary">
+                    <button type="button" id="clear-form-btn" class="btn-secondary">Clear</button>
+                </div>
+                <!-- SUCCESS MESSAGE -->
+                <p id="form-success" class="success-text"></p>
+            </form>
         </section>
         </main>
     </body>
